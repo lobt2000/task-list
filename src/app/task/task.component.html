@@ -1,0 +1,42 @@
+<ng-content></ng-content>
+
+
+<table class="table mytable">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Task</th>
+      <th scope="col">Check</th>
+      <th scope="col">DONE/IN PROGRESS</th>
+      <th scope="col">Edit</th>
+      <th scope="col">DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let getList of getLists; index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{ getLists[i].name }}</td>
+      <td><input type="checkbox" [checked]="getLists[i].status"
+          (click)="getLists[i].status ?  check(true, i) : check(false, i)"></td>
+      <td [style.color]="getLists[i].status ? 'green'  : 'red' ">{{ getLists[i].process }}</td>
+      <td><button class="edit" (click)="edit(i)">Edit</button></td>
+      <td><button class="del" [class.bcolor]="!getLists[i].status" [disabled]="!getLists[i].status"
+          (click)="del(i)">Delete</button></td>
+    </tr>
+    <tr *ngIf="!hide; else some"></tr>
+    <ng-template #some>
+      <tr class="hideBlock" *ngIf="hide">
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+        <td><input type="text" [(ngModel)]="name" name="name"></td>
+        <td><button class="save" (click)="save()">Save</button></td>
+      </tr>
+    </ng-template>
+
+
+
+
+  </tbody>
+</table>

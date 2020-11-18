@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "variables";
+
+body {
+  // background-color: rgb(240, 240, 240);
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+input {
+  border-radius: $radius;
+  border: $border gray;
+}
+
+input:focus {
+  outline: none;
+  border: $border rgb(73, 161, 243);
+  box-shadow: 0 0 3px 3px rgb(73, 161, 243);
+}

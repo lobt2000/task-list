@@ -1,0 +1,50 @@
+@import "../variables";
+
+* {
+  // background-color: rgb(240, 240, 240);
+  background-color: #fff;
+}
+
+.conteiner {
+  margin: $margin;
+  width: $width;
+  // background-color: rgb(240, 240, 240);
+}
+
+.add {
+  width: 15%;
+  height: 30px;
+  border-radius: $radius;
+  background-color: green;
+  border: $border green;
+  margin-left: 10px;
+  color: $white;
+}
+
+.input {
+  width: 82%;
+  height: 25px;
+  border-radius: $radius;
+  padding-left: 5px;
+  border: $border gray;
+}
+
+.input:focus {
+  outline: none;
+  border: $border rgb(73, 161, 243);
+  box-shadow: 0 0 3px 3px rgb(73, 161, 243);
+}
+
+hr {
+  background-color: #dee2e6;
+  border: 0.5px solid #dee2e6;
+}
+
+.add:hover {
+  background-color: darkgreen;
+}
+.add:focus {
+    outline: none;
+    border: $border green;
+    box-shadow: 0 0 3px 3px green;
+}
